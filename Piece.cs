@@ -8,6 +8,5 @@ public class Piece
         this.x = x;
         this.y = y;
         this.team = team;
-        int a;
     }
 }
