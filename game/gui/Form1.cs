@@ -1,14 +1,20 @@
 
-public partial class Form1 : Form
+public partial class Canvas : Form
 {
-    public Form1()
+    private System.ComponentModel.IContainer components = null;
+    public Canvas()
     {
-        InitializeComponent();
-        renderRectangle(Color.Red, 100, 180);
+        InitializeComponent();        
     }
+    
 
-    public void renderRectangle(Color colour, int xLocation, int yLocation)
+
+    //  ------------------ Boiler Plate Code That C# Wrote For Me ---------------------
+    private void InitializeComponent()
     {
-        
+        this.components = new System.ComponentModel.Container();
+        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        this.ClientSize = new System.Drawing.Size(800, 450);
+        this.Text = "Form1";
     }
 }
