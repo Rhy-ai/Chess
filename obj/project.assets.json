@@ -1,38 +1,38 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net7.0-windows7.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net7.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\rhymo\\.nuget\\packages\\": {}
+    "C:\\Users\\Jay\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rhymo\\Desktop\\RhiesBank\\Chess\\Chess.csproj",
+      "projectUniqueName": "D:\\VS Code Tings\\Chess\\Chess.csproj",
       "projectName": "Chess",
-      "projectPath": "C:\\Users\\rhymo\\Desktop\\RhiesBank\\Chess\\Chess.csproj",
-      "packagesPath": "C:\\Users\\rhymo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rhymo\\Desktop\\RhiesBank\\Chess\\obj\\",
+      "projectPath": "D:\\VS Code Tings\\Chess\\Chess.csproj",
+      "packagesPath": "C:\\Users\\Jay\\.nuget\\packages\\",
+      "outputPath": "D:\\VS Code Tings\\Chess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\rhymo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jay\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net7.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
           "projectReferences": {}
         }
       },
@@ -43,24 +43,28 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net7.0-windows7.0": {
+        "targetAlias": "net7.0-windows",
         "imports": [
           "net461",
           "net462",
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

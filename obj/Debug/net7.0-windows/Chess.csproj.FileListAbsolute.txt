@@ -1,0 +1,15 @@
+D:\VS Code Tings\Chess\bin\Debug\net7.0-windows\Chess.exe
+D:\VS Code Tings\Chess\bin\Debug\net7.0-windows\Chess.deps.json
+D:\VS Code Tings\Chess\bin\Debug\net7.0-windows\Chess.runtimeconfig.json
+D:\VS Code Tings\Chess\bin\Debug\net7.0-windows\Chess.dll
+D:\VS Code Tings\Chess\bin\Debug\net7.0-windows\Chess.pdb
+D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\Chess.csproj.AssemblyReference.cache
+D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\Chess.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\Chess.AssemblyInfoInputs.cache
+D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\Chess.AssemblyInfo.cs
+D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\Chess.csproj.CoreCompileInputs.cache
+D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\Chess.dll
+D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\refint\Chess.dll
+D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\Chess.pdb
+D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\Chess.genruntimeconfig.cache
+D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\ref\Chess.dll
