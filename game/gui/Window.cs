@@ -14,7 +14,7 @@ public class Window
     private void renderer(object sender, PaintEventArgs e)
     {
         Graphics graphics = e.Graphics;
-        Rectangle rectangle = new Rectangle(100, 50, 200, 300);
+        Rectangle rectangle = new Rectangle(100, 50, 200, 300); // (x, y, width, height)
         graphics.FillRectangle(new SolidBrush(Color.Red), rectangle);
        
     }
