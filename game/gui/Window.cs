@@ -3,13 +3,14 @@ public class Window
     Canvas canvas;
     public Window()
     {
-        ApplicationConfiguration.Initialize();
-
-        this.canvas = new Canvas();
+        // --- boilerplate bullshit ---
+        ApplicationConfiguration.Initialize(); 
+        this.canvas = new Canvas(); 
         canvas.Paint += renderer;
         Application.Run(canvas);        
     }
 
+    // -------------------- THIS IS WHERE WE WILL DRAW STUFF --------------------------
     private void renderer(object sender, PaintEventArgs e)
     {
         Graphics graphics = e.Graphics;

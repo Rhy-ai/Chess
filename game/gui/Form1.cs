@@ -1,4 +1,4 @@
-
+// ---------- THIS CLASS IS ALL BOILER PLATE -------------
 public partial class Canvas : Form
 {
     private System.ComponentModel.IContainer components = null;
