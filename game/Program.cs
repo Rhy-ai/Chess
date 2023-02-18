@@ -1,9 +1,4 @@
+// This is the "main method"
 
-static class Program
-{
-   
-    static void Main()
-    {
-       new Window();
-    }    
-}
+new Window();
+      

@@ -4,19 +4,66 @@ public class Window
     public Window()
     {
         // --- boilerplate bullshit ---
-        ApplicationConfiguration.Initialize(); 
-        this.canvas = new Canvas(); 
+        ApplicationConfiguration.Initialize();
+        this.canvas = new Canvas();
         canvas.Paint += renderer;
-        Application.Run(canvas);        
+        Application.Run(canvas);
     }
 
     // -------------------- THIS IS WHERE WE WILL DRAW STUFF --------------------------
     private void renderer(object sender, PaintEventArgs e)
     {
-        Graphics graphics = e.Graphics;
-        Rectangle rectangle = new Rectangle(100, 50, 200, 300); // (x, y, width, height)
-        graphics.FillRectangle(new SolidBrush(Color.Red), rectangle);
-       
+        drawChessBoard(e.Graphics);        
+
     }
+
+    public void drawChessBoard(Graphics g)
+    {
+        int x = 0;
+        int y = 0;
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                x = j * 100;
+                y = i * 100;
+                Rectangle square = new Rectangle(x, y, 100, 100); // (x, y, width, height)
+
+                if (i % 2 == 0)
+                {
+                    if (j % 2 == 0) g.FillRectangle(new SolidBrush(Color.Chocolate), square);
+                    else if (j % 2 == 1) g.FillRectangle(new SolidBrush(Color.Brown), square);
+                }
+                if (i % 2 == 1)
+                {
+                    if (j % 2 == 1) g.FillRectangle(new SolidBrush(Color.Chocolate), square);
+                    else if (j % 2 == 0) g.FillRectangle(new SolidBrush(Color.Brown), square);
+                }
+            }
+        }
+    }
+
+    public void drawText(Graphics g)
+    {
+        // Create string to draw.        
+        String text = "Ass";
+
+        // Create font and brush.
+        Font drawFont = new Font("Arial", 16);
+        SolidBrush drawBrush = new SolidBrush(Color.Black);
+
+        // Create point for upper-left corner of drawing.
+        float x = 450.0F;
+        float y = 50.0F;
+
+        // Set format of string.
+        StringFormat drawFormat = new StringFormat();
+        drawFormat.FormatFlags = StringFormatFlags.DirectionRightToLeft;
+
+        // Draw string to screen.
+        g.DrawString(text, drawFont, drawBrush, x, y, drawFormat);
+    }
+
+
 
 }
