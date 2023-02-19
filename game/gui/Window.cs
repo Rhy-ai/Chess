@@ -13,8 +13,8 @@ public class Window
     // -------------------- THIS IS WHERE WE WILL DRAW STUFF --------------------------
     private void renderer(object sender, PaintEventArgs e)
     {
-        drawChessBoard(e.Graphics);        
-
+        drawChessBoard(e.Graphics);
+        drawAsset(e.Graphics);
     }
 
     public void drawChessBoard(Graphics g)
@@ -43,17 +43,15 @@ public class Window
         }
     }
 
-    public void drawText(Graphics g)
+    public void drawText(Graphics g, String text)
     {
-        // Create string to draw.        
-        String text = "Ass";
 
         // Create font and brush.
         Font drawFont = new Font("Arial", 16);
         SolidBrush drawBrush = new SolidBrush(Color.Black);
 
         // Create point for upper-left corner of drawing.
-        float x = 450.0F;
+        float x = 900.0F;
         float y = 50.0F;
 
         // Set format of string.
@@ -62,6 +60,29 @@ public class Window
 
         // Draw string to screen.
         g.DrawString(text, drawFont, drawBrush, x, y, drawFormat);
+    }
+
+    public void drawAsset(Graphics g)
+    {
+        try
+        {
+            // Retrieve the image.
+            Bitmap image1 = new Bitmap(@"game\images\b_bishop_1x_ns.png", true);                
+            
+            image1.SetResolution(370f, 370f);
+            //Render Image
+            g.DrawImage(image1, new Point(205, 5));
+
+        }
+        catch (ArgumentException)
+        {
+            // If file path in inccorrect. this error will display
+            MessageBox.Show("There was an error." +
+                "Check the path to the image file.");
+        }
+
+
+
     }
 
 
