@@ -1,16 +1,19 @@
 public class Window
 {
     Canvas canvas;
+    static List<Tile> tiles = new List<Tile>();
+
     public Window()
     {
         // --- boilerplate bullshit ---
         ApplicationConfiguration.Initialize();
         this.canvas = new Canvas();
+        canvas.MouseClick += mouse_click;
         canvas.Paint += renderer;
         Application.Run(canvas);
     }
 
-    // -------------------- THIS IS WHERE WE WILL DRAW STUFF --------------------------
+    //            --------------------- RENDERING ---------------------
     private void renderer(object sender, PaintEventArgs e)
     {
         drawChessBoard(e.Graphics);
@@ -25,19 +28,19 @@ public class Window
         {
             for (int j = 0; j < 8; j++)
             {
-                x = j * 100;
-                y = i * 100;
-                Rectangle square = new Rectangle(x, y, 100, 100); // (x, y, width, height)
+                x = j;
+                y = i;
+                //Rectangle square = new Rectangle(x, y, 100, 100); // (x, y, width, height)
 
                 if (i % 2 == 0)
                 {
-                    if (j % 2 == 0) g.FillRectangle(new SolidBrush(Color.Chocolate), square);
-                    else if (j % 2 == 1) g.FillRectangle(new SolidBrush(Color.Brown), square);
+                    if (j % 2 == 0) tiles.Add(new Tile(x, y, Color.Chocolate, g));
+                    else if (j % 2 == 1) tiles.Add(new Tile(x, y, Color.Brown, g));
                 }
-                if (i % 2 == 1)
+                else if (i % 2 == 1)
                 {
-                    if (j % 2 == 1) g.FillRectangle(new SolidBrush(Color.Chocolate), square);
-                    else if (j % 2 == 0) g.FillRectangle(new SolidBrush(Color.Brown), square);
+                    if (j % 2 == 1) tiles.Add(new Tile(x, y, Color.Chocolate, g));
+                    else if (j % 2 == 0) tiles.Add(new Tile(x, y, Color.Brown, g));
                 }
             }
         }
@@ -64,27 +67,40 @@ public class Window
 
     public void drawAsset(Graphics g)
     {
-        try
-        {
-            // Retrieve the image.
-            Bitmap image1 = new Bitmap(@"game\images\b_bishop_1x_ns.png", true);                
-            
-            image1.SetResolution(370f, 370f);
-            //Render Image
-            g.DrawImage(image1, new Point(205, 5));
+        Pawn pawn1 = new Pawn(220, 120, 'w', g);
+        tiles[10].setPieceOnTile(pawn1);
 
-        }
-        catch (ArgumentException)
-        {
-            // If file path in inccorrect. this error will display
-            MessageBox.Show("There was an error." +
-                "Check the path to the image file.");
-        }
+        Pawn pawn2 = new Pawn(320, 120, 'w', g);
+        tiles[11].setPieceOnTile(pawn2);
 
 
 
     }
 
+
+    //            --------------------- EVENTS ---------------------
+    public void mouse_click(object sender, MouseEventArgs e)
+    {
+        Graphics g = canvas.CreateGraphics();
+
+        foreach (Tile tile in tiles)
+        {
+            if (tile.isInAreaOfTile(e.X, e.Y))
+            {
+                if (tile.getPieceOnTile() != null)
+                {
+                    tile.highlightThis(g);    
+                    tile.highlightAvailableMoves(g);                
+                }
+                else 
+                {
+                    
+                }
+                
+            }
+            
+        }
+    }
 
 
 }
