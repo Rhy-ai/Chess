@@ -1,7 +1,9 @@
 public class Window
 {
     Canvas canvas;
-    static List<Tile> tiles = new List<Tile>();
+    public static List<Tile> tiles = new List<Tile>();
+
+    ChessPiece? selectedPiece = null;
 
     public Window()
     {
@@ -67,14 +69,9 @@ public class Window
 
     public void drawAsset(Graphics g)
     {
-        Pawn pawn1 = new Pawn(220, 120, 'w', g);
-        tiles[10].setPieceOnTile(pawn1);
+        Pawn pawn1 = new Pawn('w', tiles[10], g);       
 
-        Pawn pawn2 = new Pawn(320, 120, 'w', g);
-        tiles[11].setPieceOnTile(pawn2);
-
-
-
+        Pawn pawn2 = new Pawn('w', tiles[11], g);   
     }
 
 
@@ -87,14 +84,16 @@ public class Window
         {
             if (tile.isInAreaOfTile(e.X, e.Y))
             {
-                if (tile.getPieceOnTile() != null)
+                
+                foreach(ChessPiece piece in ChessPiece.allPieces)
                 {
-                    tile.highlightThis(g);    
-                    tile.highlightAvailableMoves(g);                
-                }
-                else 
-                {
-                    
+                    if (piece.tile == tile)
+                    {
+                        if (selectedPiece != null) selectedPiece.tile.unHighlight(g);                       
+                        selectedPiece = piece;
+                        selectedPiece.tile.highlight(g);
+                        Tile.HighlightTiles(selectedPiece.getAvailableMoves(tiles), g);
+                    }
                 }
                 
             }

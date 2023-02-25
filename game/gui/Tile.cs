@@ -1,13 +1,13 @@
 public class Tile
 {
-    int x;
-    int y;
+    public int x;
+    public int y;
 
     const int size = 100;
     Rectangle square;
     Color colour;
 
-    ChessPiece? piece = null;
+    
 
     private Tile currentTile;
     public Tile(int x, int y, Color colour, Graphics g)
@@ -19,20 +19,23 @@ public class Tile
         g.FillRectangle(new SolidBrush(colour), square);
     }
 
-    public void highlightAvailableMoves(Graphics g)
+    public static void HighlightTiles(List<Tile> tiles, Graphics g)
     {
-        square.Y += 100;
-        g.FillRectangle(new SolidBrush(Color.Pink), square);
-        g.DrawRectangle(new Pen(Color.Black, 2), square);
-
-        square.Y += 100;
-        g.FillRectangle(new SolidBrush(Color.Pink), square);
-        g.DrawRectangle(new Pen(Color.Black, 2), square);
+        foreach(Tile tile in tiles)
+        {
+            g.FillRectangle(new SolidBrush(Color.Pink), tile.square);
+            g.DrawRectangle(new Pen(Color.Black, 2), tile.square);
+        }
     }
-    public void highlightThis(Graphics g)
+    public void highlight(Graphics g)
     {
-        g.DrawRectangle(new Pen(Color.Yellow, 4), square);
+        g.DrawRectangle(new Pen(Color.Black, 3), square);
 
+    }
+
+    public void unHighlight(Graphics g)
+    {
+        g.DrawRectangle(new Pen(colour, 3), square);
     }
 
     public bool isInAreaOfTile(int x, int y)
@@ -44,15 +47,7 @@ public class Tile
         return false;
     }
 
-    public void setPieceOnTile(ChessPiece piece)
-    {
-        this.piece = piece;
-    }
 
-    public ChessPiece? getPieceOnTile()
-    {
-        return piece;
-    }
     
     
 }

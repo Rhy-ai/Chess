@@ -1,20 +1,18 @@
 public abstract class ChessPiece
 {
-    int x;
-    int y;
+
     char team;
+    public Tile tile;   
+    public static List<ChessPiece> allPieces = new List<ChessPiece>(); 
 
-    
-
-    public ChessPiece(int x, int y, char team, Graphics g)
+    public ChessPiece(char team, Tile tile, Graphics g)
     {
-        this.x = x;
-        this.y = y;
         this.team = team;
+        this.tile = tile;
+        allPieces.Add(this);
     }
 
-    public abstract List<Tile> getAvailableMoves();
-    
+    public abstract List<Tile> getAvailableMoves(List<Tile> tiles);
 
     
 
