@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VS Code Tings\\Chess\\Chess.csproj": {}
+    "C:\\Users\\jay\\Documents\\Vs Code\\Chess\\Chess.csproj": {}
   },
   "projects": {
-    "D:\\VS Code Tings\\Chess\\Chess.csproj": {
+    "C:\\Users\\jay\\Documents\\Vs Code\\Chess\\Chess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VS Code Tings\\Chess\\Chess.csproj",
+        "projectUniqueName": "C:\\Users\\jay\\Documents\\Vs Code\\Chess\\Chess.csproj",
         "projectName": "Chess",
-        "projectPath": "D:\\VS Code Tings\\Chess\\Chess.csproj",
-        "packagesPath": "C:\\Users\\Jay\\.nuget\\packages\\",
-        "outputPath": "D:\\VS Code Tings\\Chess\\obj\\",
+        "projectPath": "C:\\Users\\jay\\Documents\\Vs Code\\Chess\\Chess.csproj",
+        "packagesPath": "C:\\Users\\jay\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jay\\Documents\\Vs Code\\Chess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jay\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\jay\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +56,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
