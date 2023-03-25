@@ -22,7 +22,7 @@ public class Window
         drawAsset(e.Graphics);
     }
 
-    public void drawChessBoard(Graphics g)
+    public static void drawChessBoard(Graphics g)
     {
         int x = 0;
         int y = 0;
@@ -32,7 +32,6 @@ public class Window
             {
                 x = j;
                 y = i;
-                //Rectangle square = new Rectangle(x, y, 100, 100); // (x, y, width, height)
 
                 if (i % 2 == 0)
                 {
@@ -69,9 +68,9 @@ public class Window
 
     public void drawAsset(Graphics g)
     {
-        Pawn pawn1 = new Pawn('w', tiles[10], g);       
+        Pawn pawn1 = new Pawn('w', 10, tiles, g);       
 
-        Pawn pawn2 = new Pawn('w', tiles[11], g);   
+        Pawn pawn2 = new Pawn('w', 11, tiles, g);   
     }
 
 
@@ -87,17 +86,27 @@ public class Window
                 
                 foreach(ChessPiece piece in ChessPiece.allPieces)
                 {
-                    if (piece.tile == tile)
+                    // -CLICK ON CHESS PIECE-
+                    if (piece.currentTile == tile)
                     {
-                        if (selectedPiece != null) selectedPiece.tile.unHighlight(g);                       
-                        selectedPiece = piece;
-                        selectedPiece.tile.highlight(g);
-                        Tile.HighlightTiles(selectedPiece.getAvailableMoves(tiles), g);
-                    }
-                }
-                
-            }
-            
+                        if (selectedPiece != null){
+                            Tile.unHighlightTiles(selectedPiece.getAvailableMoves(), g);
+
+                            selectedPiece.currentTile.unHighlightSelf(g);
+                        }
+                                               
+                        selectedPiece = piece;        
+                        
+                        selectedPiece.currentTile.highlightSelf(g);
+                        Tile.HighlightTiles(selectedPiece.getAvailableMoves(), g);
+                    }                    
+                }    
+
+                // -CLICK ON HIGHLIGHTED TILE-
+                if (tile.isHighlighted && selectedPiece != null){
+                    selectedPiece.movePiece(tile ,g);
+                }            
+            }            
         }
     }
 

@@ -1,6 +1,6 @@
 public class Pawn : ChessPiece
 {
-    public Pawn(char team, Tile tile,Graphics g): base(team, tile, g)
+    public Pawn(char team, int currentTile, List<Tile> tiles, Graphics g): base(team, currentTile, tiles, g)
     {
         try
         {
@@ -10,8 +10,8 @@ public class Pawn : ChessPiece
           
 
           //Small adjustments to make to pawn centre of the tile
-            int pawnX = (tile.x * 100) + 15;
-            int pawnY = (tile.y * 100) + 15;
+            int pawnX = (tiles[currentTile].x * 100) + 15;
+            int pawnY = (tiles[currentTile].y * 100) + 15;
 
             //Render Image
             g.DrawImage(image1, new Point(pawnX, pawnY));
@@ -27,19 +27,30 @@ public class Pawn : ChessPiece
 
     bool firstMove = true;  
 
-    public override List<Tile> getAvailableMoves(List<Tile> tiles)
-    {
-        List<Tile> availableMoves = new List<Tile>();
+    public override void setAvailableMoves(List<Tile> tiles)
+    {      
         for (int i = 0; i < tiles.Count; i++)
         {
-            if (this.tile == tiles[i])
+            if (this.currentTile == tiles[i])
             {
-                availableMoves.Add(tiles[i + 8]);
-                availableMoves.Add(tiles[i + 16]);
+                availableTiles.Add(tiles[i + 8]);
+                availableTiles.Add(tiles[i + 16]);
             }
-        }
+        }        
+    }
 
-        return availableMoves;
+    public override void movePiece(Tile selectedTile, Graphics g)
+    {
+        // Retrieve the image.
+        Bitmap image1 = new Bitmap(@"game\images\w_pawn_1x_ns.png", true);                
+        image1.SetResolution(370f, 370f);
+          
+
+        //Small adjustments to make to pawn centre of the tile
+        int pawnX = (selectedTile.x * 100) + 15;
+        int pawnY = (selectedTile.y * 100) + 15;
+
+        g.DrawImage(image1, new Point(pawnX, pawnY));
     }
 }
 

@@ -5,11 +5,10 @@ public class Tile
 
     const int size = 100;
     Rectangle square;
-    Color colour;
+    Color colour;  
 
-    
+    public bool isHighlighted = false;
 
-    private Tile currentTile;
     public Tile(int x, int y, Color colour, Graphics g)
     {
         this.x = x;
@@ -25,15 +24,27 @@ public class Tile
         {
             g.FillRectangle(new SolidBrush(Color.Pink), tile.square);
             g.DrawRectangle(new Pen(Color.Black, 2), tile.square);
+            tile.isHighlighted = true;            
         }
     }
-    public void highlight(Graphics g)
-    {
-        g.DrawRectangle(new Pen(Color.Black, 3), square);
 
+    public static void unHighlightTiles(List<Tile> tiles, Graphics g)
+    {
+        foreach(Tile tile in tiles)
+        {                    
+            g.FillRectangle(new SolidBrush(tile.colour), tile.square);
+            g.DrawRectangle(new Pen(tile.colour, 2), tile.square);
+            tile.isHighlighted = true;
+        }
+        
     }
 
-    public void unHighlight(Graphics g)
+    public void highlightSelf(Graphics g)
+    {
+        g.DrawRectangle(new Pen(Color.Black, 3), square);
+    }
+
+    public void unHighlightSelf(Graphics g)
     {
         g.DrawRectangle(new Pen(colour, 3), square);
     }
