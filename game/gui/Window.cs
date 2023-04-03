@@ -47,6 +47,11 @@ public class Window
         }
     }
 
+    public void reDraw(Graphics g){
+        drawChessBoard(g);
+        drawAsset(g);
+    }
+
     public void drawText(Graphics g, String text)
     {
 
