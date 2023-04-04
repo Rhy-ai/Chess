@@ -34,7 +34,7 @@ public class Tile
         {                    
             g.FillRectangle(new SolidBrush(tile.colour), tile.square);
             g.DrawRectangle(new Pen(tile.colour, 2), tile.square);
-            tile.isHighlighted = true;
+            tile.isHighlighted = false;
         }
         
     }

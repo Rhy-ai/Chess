@@ -10,7 +10,7 @@ public class Pawn : ChessPiece
             // Retrieve the image.
             Bitmap image1 = new Bitmap(@"game\images\w_pawn_1x_ns.png", true);   
             Bitmap resizedImage1 = new Bitmap(image1, new Size(image1.Width/4, image1.Height/4));   
-            resizedImage1.SetResolution(110f, 110f);
+            resizedImage1.SetResolution(100f, 100f);
           
 
           //Small adjustments to make to pawn centre of the tile
