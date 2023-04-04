@@ -1,7 +1,7 @@
 public class Window
 {
     Canvas canvas;
-    public static List<Tile> tiles = new List<Tile>();
+    public static List<Tile> allTiles = new List<Tile>();
 
     ChessPiece? selectedPiece = null;
 
@@ -35,19 +35,20 @@ public class Window
 
                 if (i % 2 == 0)
                 {
-                    if (j % 2 == 0) tiles.Add(new Tile(x, y, Color.Chocolate, g));
-                    else if (j % 2 == 1) tiles.Add(new Tile(x, y, Color.Brown, g));
+                    if (j % 2 == 0) allTiles.Add(new Tile(x, y, Color.Chocolate, g));
+                    else if (j % 2 == 1) allTiles.Add(new Tile(x, y, Color.Brown, g));
                 }
                 else if (i % 2 == 1)
                 {
-                    if (j % 2 == 1) tiles.Add(new Tile(x, y, Color.Chocolate, g));
-                    else if (j % 2 == 0) tiles.Add(new Tile(x, y, Color.Brown, g));
+                    if (j % 2 == 1) allTiles.Add(new Tile(x, y, Color.Chocolate, g));
+                    else if (j % 2 == 0) allTiles.Add(new Tile(x, y, Color.Brown, g));
                 }
             }
         }
     }
 
     public void reDraw(Graphics g){
+        allTiles.Clear();
         drawChessBoard(g);
         drawAsset(g);
     }
@@ -73,9 +74,9 @@ public class Window
 
     public void drawAsset(Graphics g)
     {
-        Pawn pawn1 = new Pawn('w', 10, tiles, g);       
+        Pawn pawn1 = new Pawn('w', 10, allTiles, g);       
 
-        Pawn pawn2 = new Pawn('w', 11, tiles, g);   
+        Pawn pawn2 = new Pawn('w', 11, allTiles, g);   
     }
 
 
@@ -84,7 +85,7 @@ public class Window
     {
         Graphics g = canvas.CreateGraphics();
 
-        foreach (Tile tile in tiles)
+        foreach (Tile tile in allTiles)
         {
             if (tile.isInAreaOfTile(e.X, e.Y))
             {
@@ -110,6 +111,8 @@ public class Window
                 // -CLICK ON HIGHLIGHTED TILE-
                 if (tile.isHighlighted && selectedPiece != null){
                     selectedPiece.movePiece(tile ,g);
+                    reDraw(g);
+                    break;
                 }            
             }            
         }
