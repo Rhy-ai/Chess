@@ -1,9 +1,4 @@
-
-static class Program
-{
-   
-    static void Main()
-    {
-       new Window();
-    }    
-}
+// This is the "main method"
+new Window();
+      
+      

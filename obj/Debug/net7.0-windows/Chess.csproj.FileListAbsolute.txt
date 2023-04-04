@@ -13,3 +13,18 @@ D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\refint\Chess.dll
 D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\Chess.pdb
 D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\Chess.genruntimeconfig.cache
 D:\VS Code Tings\Chess\obj\Debug\net7.0-windows\ref\Chess.dll
+C:\Users\jay\Documents\Vs Code\Chess\bin\Debug\net7.0-windows\Chess.exe
+C:\Users\jay\Documents\Vs Code\Chess\bin\Debug\net7.0-windows\Chess.deps.json
+C:\Users\jay\Documents\Vs Code\Chess\bin\Debug\net7.0-windows\Chess.runtimeconfig.json
+C:\Users\jay\Documents\Vs Code\Chess\bin\Debug\net7.0-windows\Chess.dll
+C:\Users\jay\Documents\Vs Code\Chess\bin\Debug\net7.0-windows\Chess.pdb
+C:\Users\jay\Documents\Vs Code\Chess\obj\Debug\net7.0-windows\Chess.csproj.AssemblyReference.cache
+C:\Users\jay\Documents\Vs Code\Chess\obj\Debug\net7.0-windows\Chess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jay\Documents\Vs Code\Chess\obj\Debug\net7.0-windows\Chess.AssemblyInfoInputs.cache
+C:\Users\jay\Documents\Vs Code\Chess\obj\Debug\net7.0-windows\Chess.AssemblyInfo.cs
+C:\Users\jay\Documents\Vs Code\Chess\obj\Debug\net7.0-windows\Chess.csproj.CoreCompileInputs.cache
+C:\Users\jay\Documents\Vs Code\Chess\obj\Debug\net7.0-windows\Chess.dll
+C:\Users\jay\Documents\Vs Code\Chess\obj\Debug\net7.0-windows\refint\Chess.dll
+C:\Users\jay\Documents\Vs Code\Chess\obj\Debug\net7.0-windows\Chess.pdb
+C:\Users\jay\Documents\Vs Code\Chess\obj\Debug\net7.0-windows\Chess.genruntimeconfig.cache
+C:\Users\jay\Documents\Vs Code\Chess\obj\Debug\net7.0-windows\ref\Chess.dll
